@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodistan</title>
+<style>
+  body { background-color: coral; }
+  #header { background: #ffcc00; padding: 10px; text-align: center; }
+  #header button { margin: 5px; }
+  #main { display: none; }
+  #footer { background: #333; color: white; text-align: center; padding: 10px; }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <img src="FOODISTAN LOGO IMAGE SOURCE" alt="Foodistan Logo" style="height: 50px;">
+  <button onclick="showHome()">Home</button>
+  <button onclick="showMenu()">Menu</button>
+</div>
+
+<div id="main">
+  <!-- Dynamic content will be loaded here based on navigation -->
+</div>
+
+<div id="footer">
+  &copy; 2023 Foodistan. All rights reserved.
+</div>
+
+<script>
+  function showHome() {
+    const main = document.getElementById('main');
+    main.innerHTML = '<img src="RESTAURANT IMAGE SOURCE" alt="Restaurant" style="width: 100%;">';
+    main.style.display = 'block';
+  }
+
+  function showMenu() {
+    const main = document.getElementById('main');
+    main.innerHTML = `
+      <div>
+        <img src="IMAGE SOURCE FOR A DISH" alt="Dish Name">
+        <p>Dish Name - $PRICE</p>
+        <button>Ingredients</button>
+        <button>Order</button>
+      </div>
+    `;
+    // Repeat the above div for each menu item you want to show
+    main.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
